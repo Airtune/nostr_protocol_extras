@@ -42,7 +42,7 @@ const get_nostr_banano_link_signature = (nostr_pubkey, bananoPrivateKeyOrSigner)
 
 The `"<nostr_banano_link_signature>"` can then be verified using javascript in the client like so:
 ```js
-const verify_nostr_banano_link_signature = (nostr_pubkey, banano_address, banano_signature) => {
+const verify_nostr_banano_link_signature = (nostr_pubkey, banano_address, nostr_banano_link_signature) => {
   const message = `I'm linking this Banano account to my Nostr account:\nNostr public key: ${nostr_pubkey}`;
   const banano_public_key = bananojs.getAccountPublicKey(banano_address);
   return bananojs.verifyMessage(banano_public_key, message, banano_signature);
