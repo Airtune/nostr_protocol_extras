@@ -66,7 +66,8 @@ const shared_secret_hex = bananojs.getSharedSecret(banano_private_key, banano_pu
 ## Memo keypair
 
 ```js
-const memo_private_key = sha256(`${shared_secret_hex}_memo`);
+const memo_encryption_key = sha256(`${shared_secret_hex}_encryption_key`);
+const memo_private_key    = sha256(`${shared_secret_hex}_memo`);
 // https://github.com/nbd-wtf/nostr-tools/blob/de72172583a3059b010791e5719b47405b7a6a29/keys.ts#L8C17-L8C29
 const memo_public_key = getPublicKey(memo_private_key);
 ```
